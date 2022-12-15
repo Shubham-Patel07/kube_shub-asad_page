@@ -1,0 +1,14 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Service
+metadata:
+  name: nginx
+  namespace: nginx
+  labels:
+    app: nginx
+spec:
+  type: NodePort
+  ports:
+    port: 80
+    nodePort: 30225
+  selector:
+    name: nginx 
